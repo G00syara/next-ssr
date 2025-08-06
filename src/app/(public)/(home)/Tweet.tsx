@@ -1,4 +1,6 @@
-import { ITweet } from "./tweets";
+import { PAGES } from "@/config/pages.config";
+import type { ITweet } from "@/shared/types/tweet.types";
+import Link from "next/link";
 
 interface TweetProps {
   tweet: ITweet;
@@ -16,10 +18,10 @@ export function Tweet({ tweet, className = "" }: TweetProps) {
         </div>
         <div className="flex-1 min-w-0">
           <div className="flex items-center space-x-1">
-            <p className="font-bold text-gray-900">{tweet.author}</p>
+            <Link href={PAGES.PROFILE(tweet.author)} className="font-bold text-gray-900">{tweet.author}</Link>
           </div>
           <p className="mt-1 text-gray-800">{tweet.text}</p>
-          
+
         </div>
       </div>
     </div>

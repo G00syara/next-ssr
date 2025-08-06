@@ -1,13 +1,16 @@
-import { PAGES } from '@/config/pages.config'
-import Link from 'next/link'
-import React from 'react'
+'use client'
+
+import { MENU } from '@/shared/data/menu.conts'
+import { usePathname } from 'next/navigation'
+import MenuItem from './MenuItem'
+import { match } from 'path-to-regexp'
 
 const Menu = () => {
+    const pathname = usePathname()
+
     return (
         <nav className="flex items-center space-x-6">
-            <Link href={PAGES.HOME}>Home</Link>
-            <Link href={PAGES.EXPLORE}>Explore</Link>
-            <Link href={PAGES.PROFILE_FAKE}>Profile</Link>
+            {MENU.map((menu) => <MenuItem isActive={!!match(menu.href)(pathname)} key={menu.name} title={menu.name} href={menu.href} />)}
         </nav>
     )
 }

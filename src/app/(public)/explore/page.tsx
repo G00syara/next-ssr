@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { Suspense } from 'react'
+import Explore from './Explore'
 
 const page = () => {
     return (
-        <div>
-            Fake explore
-        </div>
+        <Suspense>
+            <Explore />
+        </Suspense>
     )
 }
 

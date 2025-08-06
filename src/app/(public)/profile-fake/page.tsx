@@ -1,11 +1,15 @@
-import React from 'react'
 
-const page = () => {
+import type { Metadata } from 'next'
+import ProfileFake from './ProfileFake'
+
+export const metadata: Metadata = {
+    title: 'ProfileFake'
+}
+
+const ProfileFakePage = () => {
     return (
-        <div>
-            Fake Profile
-        </div>
+        <ProfileFake />
     )
 }
 
-export default page
+export default ProfileFakePage

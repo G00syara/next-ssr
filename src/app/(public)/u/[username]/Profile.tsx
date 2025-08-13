@@ -3,11 +3,11 @@
 import { useParams } from 'next/navigation'
 
 const Profile = () => {
-    const params = useParams()
+    const params = useParams<{ username: string }>()
 
     return (
         <div>
-            Profile @{params}
+            Profile @{params.username}
         </div>
     )
 }

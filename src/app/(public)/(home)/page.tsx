@@ -1,5 +1,6 @@
 import { tweets } from "@/shared/data/tweet.const";
 import { Tweet } from "./Tweet";
+import { TweetForm } from "./TweetForm";
 
 export default function Home() {
   return (
@@ -9,12 +10,13 @@ export default function Home() {
           <h1 className="text-3xl font-bold text-blue-500">Twitter Feed</h1>
           <p className="text-gray-600">Latest tweets from your network</p>
         </header>
+        <TweetForm />
         <div className="space-y-4">
           {tweets.map((tweet) => (
-            <Tweet 
-              key={tweet.author} 
-              tweet={tweet} 
-              className="bg-white rounded-lg shadow p-4 hover:shadow-md transition-shadow" 
+            <Tweet
+              key={tweet.author}
+              tweet={tweet}
+              className="bg-white rounded-lg shadow p-4 hover:shadow-md transition-shadow"
             />
           ))}
         </div>

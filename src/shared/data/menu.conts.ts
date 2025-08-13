@@ -10,4 +10,5 @@ export const MENU: IMenuItem[] = [{
     name: 'Home'
 }, 
 { href: PAGES.EXPLORE, name: 'Explore' }, 
-{ href: PAGES.PROFILE_FAKE, name: 'Profile-fake' }]
+{ href: PAGES.PROFILE_FAKE, name: 'Profile-fake' },
+{href: PAGES.SHOP, name: 'Shop'}]
